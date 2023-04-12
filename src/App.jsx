@@ -1,5 +1,15 @@
+import { useStoryblok, StoryblokComponent } from '@storyblok/react';
+
 const App = () => {
-  return <div>Page In Construction</div>;
+  let slug = window.location.pathname === '/' ? 'home' : window.location.pathname.replace('/', '');
+
+  const story = useStoryblok(slug, { version: 'draft' });
+
+  if (!story || !story.content) {
+    return <div>Loading...</div>;
+  }
+
+  return <StoryblokComponent blok={story.content} />;
 };
 
 export default App;

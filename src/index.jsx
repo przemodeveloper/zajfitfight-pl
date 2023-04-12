@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { storyblokInit, apiPlugin } from '@storyblok/react';
 
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
+import Home from './pages/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,6 +37,14 @@ const firebaseConfig = {
   appId: '1:361803221899:web:2528063e7c1b49383d3d8e',
   measurementId: 'G-0RW24YWJL0'
 };
+
+storyblokInit({
+  accessToken: 'eEd2NYvdyNmSY3A9WcOmkgtt',
+  use: [apiPlugin],
+  components: {
+    page: Home
+  }
+});
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
