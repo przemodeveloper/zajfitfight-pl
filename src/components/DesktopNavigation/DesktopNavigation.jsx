@@ -11,13 +11,21 @@ const DesktopNavigation = () => {
           <li className={styles.nav_item}>
             <Link to="/">Strona główna</Link>
           </li>
-          <li className={styles.nav_item}>Galeria</li>
+          <li className={styles.nav_item}>
+            <Link to="galeria">Galeria</Link>
+          </li>
           <li className={styles.nav_item}>
             <Link to="o-nas">O nas</Link>
           </li>
-          <li className={styles.nav_item}>Grafik</li>
-          <li className={styles.nav_item}>Cennik</li>
-          <li className={styles.nav_item}>Kontakt</li>
+          <li className={styles.nav_item}>
+            <Link to="grafik">Grafik</Link>
+          </li>
+          <li className={styles.nav_item}>
+            <Link to="cennik">Cennik</Link>
+          </li>
+          <li className={styles.nav_item}>
+            <Link to="kontakt">Kontakt</Link>
+          </li>
         </ul>
       </nav>
     </header>
