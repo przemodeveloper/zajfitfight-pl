@@ -1,12 +1,12 @@
-import logo from '../../assets/logo_no_bg.png';
+import { storyblokEditable } from '@storyblok/react';
 
-const Header = () => {
-  return (
-    <div className="flex justify-center items-center flex-col">
-      <img src={logo} className="w-1/2" />
-      <h1 className="text-5xl">Page in construction</h1>
+const Header = ({ blok }) => (
+  <div {...storyblokEditable(blok)} key={blok._uid} data-test="header">
+    <div>
+      <h1>{blok.title}</h1>
+      <h2>{blok.subTitle}</h2>
     </div>
-  );
-};
+  </div>
+);
 
 export default Header;

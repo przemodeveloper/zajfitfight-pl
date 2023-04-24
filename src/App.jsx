@@ -1,15 +1,39 @@
-import { useStoryblok, StoryblokComponent } from '@storyblok/react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import RootLayout from './pages/RootLayout';
+import { storyblokInit, apiPlugin } from '@storyblok/react';
+import Page from './components/Page/Page';
+import Header from './components/Header/Header';
+import Home from './pages/Home';
+import About from './pages/About';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: 'o-nas',
+        element: <About />
+      }
+    ]
+  }
+]);
+
+storyblokInit({
+  accessToken: 'eEd2NYvdyNmSY3A9WcOmkgtt',
+  use: [apiPlugin],
+  components: {
+    page: Page,
+    header: Header
+  }
+});
 
 const App = () => {
-  let slug = window.location.pathname === '/' ? 'home' : window.location.pathname.replace('/', '');
-
-  const story = useStoryblok(slug, { version: 'draft' });
-
-  if (!story || !story.content) {
-    return <div>Loading...</div>;
-  }
-
-  return <StoryblokComponent blok={story.content} />;
+  return <RouterProvider router={router} />;
 };
 
 export default App;

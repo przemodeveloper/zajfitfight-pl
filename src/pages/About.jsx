@@ -1,14 +1,14 @@
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
 
-const Home = () => {
+const About = () => {
   const storyblokApi = getStoryblokApi();
   const [story, setStory] = useState();
-  const home = useStoryblokState(story);
+  const about = useStoryblokState(story);
 
-  const fetchHomeStory = async () => {
+  const fetchAboutStory = async () => {
     try {
-      const { data } = await storyblokApi.get('cdn/stories/home', {
+      const { data } = await storyblokApi.get('cdn/stories/o-nas', {
         version: 'draft'
       });
       setStory(data?.story);
@@ -18,10 +18,10 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchHomeStory();
+    fetchAboutStory();
   }, []);
 
-  return home?.content && <StoryblokComponent blok={home.content} />;
+  return about?.content && <StoryblokComponent blok={about.content} />;
 };
 
-export default Home;
+export default About;
