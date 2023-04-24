@@ -2,7 +2,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import RootLayout from './pages/RootLayout';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import Page from './components/Page/Page';
-import Header from './components/Header/Header';
 import Home from './pages/Home';
 import About from './pages/About';
 
@@ -27,8 +26,7 @@ storyblokInit({
   accessToken: 'eEd2NYvdyNmSY3A9WcOmkgtt',
   use: [apiPlugin],
   components: {
-    page: Page,
-    header: Header
+    page: Page
   }
 });
 

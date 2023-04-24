@@ -1,4 +1,10 @@
+@import '../../variables';
+
 .nav_item {
   cursor: pointer;
   transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
