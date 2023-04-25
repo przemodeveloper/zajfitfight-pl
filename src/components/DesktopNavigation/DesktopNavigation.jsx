@@ -1,33 +1,59 @@
-import { Link } from 'react-router-dom';
 import styles from './DesktopNavigation.module.scss';
 import logo_small from '../../assets/logo_small.png';
+import { NavLink } from 'react-router-dom';
 
 const DesktopNavigation = () => {
   return (
-    <header className="container mx-auto flex flex-wrap justify-between items-center p-8 text-primary text-3xl">
-      <img src={logo_small} alt="logo" />
-      <nav className="my-4 lg:my-0 border-b-4 border-l-4 border-primary p-4">
-        <ul className="flex flex-wrap gap-x-8">
-          <li className={styles.nav_item}>
-            <Link to="/">Strona główna</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link to="galeria">Galeria</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link to="o-nas">O nas</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link to="grafik">Grafik</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link to="cennik">Cennik</Link>
-          </li>
-          <li className={styles.nav_item}>
-            <Link to="kontakt">Kontakt</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="text-white text-3xl flex justify-between">
+      <div>
+        <img src={logo_small} alt="logo" />
+      </div>
+      <div>
+        <nav className="my-4 lg:my-0 flex justify-end">
+          <ul className="flex flex-wrap gap-x-8 border-b-4 border-l-4 items-center px-12 py-8 border-primary bg-secondary">
+            <li className={styles.nav_item}>
+              <NavLink className={({ isActive }) => (isActive ? styles.active : undefined)} to="/">
+                Strona główna
+              </NavLink>
+            </li>
+            <li className={styles.nav_item}>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to="galeria">
+                Galeria
+              </NavLink>
+            </li>
+            <li className={styles.nav_item}>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to="o-nas">
+                O nas
+              </NavLink>
+            </li>
+            <li className={styles.nav_item}>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to="grafik">
+                Grafik
+              </NavLink>
+            </li>
+            <li className={styles.nav_item}>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to="cennik">
+                Cennik
+              </NavLink>
+            </li>
+            <li className={styles.nav_item}>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to="kontakt">
+                Kontakt
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };
