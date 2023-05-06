@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const DesktopNavigation = () => {
   return (
-    <header className="text-white text-3xl flex justify-between">
+    <header className="text-white text-2xl flex justify-between">
       <div>
         <img src={logo_small} alt="logo" />
       </div>
