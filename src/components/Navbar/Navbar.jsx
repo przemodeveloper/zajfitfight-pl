@@ -18,8 +18,11 @@ const Navbar = () => {
         <div className="menu-icon p-2">
           <Hamburger toggled={showNavbar} toggle={handleShowNavbar} color="#cf142b" size={32} />
         </div>
-        <div className={`nav-elements  ${showNavbar && 'active'} text-2xl text-white`}>
-          <ul className="flex justify-between border-b-4 border-l-4 px-8 lg:px-12 py-6 lg:py-8 border-primary bg-secondary gap-x-4 lg:gap-x-8">
+        <div
+          className={`nav-elements  ${
+            showNavbar && 'active'
+          } text-2xl text-white bg-secondary  border-b-4 border-l-4 border-primary`}>
+          <ul className="flex justify-between px-12 py-8 gap-x-4 lg:gap-x-8">
             <li>
               <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/">
                 Strona główna
