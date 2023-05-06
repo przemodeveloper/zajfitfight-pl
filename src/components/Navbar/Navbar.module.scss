@@ -1,13 +1,4 @@
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-
-.menu-icon {
+.hamburger {
   display: none;
 }
 
@@ -16,33 +7,32 @@
 }
 
 @media (max-width: 768px) {
-  .menu-icon {
+  .hamburger {
     display: block;
     cursor: pointer;
     z-index: 1;
   }
 
-  .nav-elements {
+  .elements {
     position: absolute;
     right: 0;
-    // background-color: #fef7e5;
     width: 0px;
     height: 100vh;
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
 
-  .nav-elements.active {
+  .elements.active {
     width: 270px;
   }
 
-  .nav-elements ul {
+  .elements ul {
     padding-top: 40px;
     display: flex;
     flex-direction: column;
   }
 
-  .nav-elements ul li {
+  .elements ul li {
     margin-right: unset;
     margin-top: 22px;
     white-space: nowrap;
