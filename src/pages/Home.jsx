@@ -1,5 +1,6 @@
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
+import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 
 const Home = () => {
   const storyblokApi = getStoryblokApi();
@@ -21,7 +22,14 @@ const Home = () => {
     fetchHomeStory();
   }, []);
 
-  return home?.content && <StoryblokComponent blok={home.content} />;
+  return (
+    home?.content && (
+      <>
+        <BackgroundVideo />
+        <StoryblokComponent blok={home.content} />
+      </>
+    )
+  );
 };
 
 export default Home;
