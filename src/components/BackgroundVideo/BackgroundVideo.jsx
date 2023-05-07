@@ -3,7 +3,7 @@ import styles from './BackgroundVideo.module.scss';
 
 const BackgroundVideo = () => {
   return (
-    <video autoPlay loop muted className={styles.video}>
+    <video muted autoPlay loop className={styles.video}>
       <source src={backgroundVideo} type="video/mp4" />
     </video>
   );

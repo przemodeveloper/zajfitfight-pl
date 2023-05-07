@@ -1,4 +1,4 @@
-import logo from '../../assets/logo_no_bg.png';
+import logo from '../../assets/logo_small.webp';
 import styles from './Logo.module.scss';
 
 const Logo = () => (
