@@ -23,42 +23,42 @@ const Navbar = () => {
             showNavbar && styles.active
           } text-3xl text-white bg-secondary border-b-4 border-l-4 border-primary`}>
           <ul className="flex justify-between px-12 py-8 gap-x-4 lg:gap-x-8">
-            <li>
+            <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
                 to="/">
                 Strona główna
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
                 to="galeria">
                 Galeria
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
                 to="o-nas">
                 O nas
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
                 to="grafik">
                 Grafik
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
                 to="cennik">
                 Cennik
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
                 to="kontakt">
