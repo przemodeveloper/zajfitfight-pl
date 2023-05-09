@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="flex justify-between h-full">
+      <div className="flex justify-between h-full bg-secondary border-primary border-b-4">
         <Logo />
         <div className={`${styles.hamburger} p-2`}>
           <Hamburger toggled={showNavbar} toggle={handleShowNavbar} color="#cf142b" size={32} />
@@ -21,8 +21,8 @@ const Navbar = () => {
         <div
           className={`${styles.elements}  ${
             showNavbar && styles.active
-          } text-3xl md:text-2xl lg:text-3xl text-white bg-secondary md:border-b-4 border-l-4 border-primary`}>
-          <ul className="flex justify-between px-12 py-8 gap-x-4 lg:gap-x-8">
+          } text-3xl text-white bg-secondary border-l-4 md:border-l-0 border-primary`}>
+          <ul className="flex justify-between md:items-center px-12 py-8 gap-x-4 lg:gap-x-8">
             <li onClick={() => setShowNavbar(false)}>
               <NavLink
                 className={({ isActive }) => (isActive ? styles['active-link'] : undefined)}
