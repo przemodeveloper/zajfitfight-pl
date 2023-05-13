@@ -23,12 +23,10 @@ const Home = () => {
   }, []);
 
   return (
-    home?.content && (
-      <>
-        <BackgroundVideo />
-        <StoryblokComponent blok={home.content} />
-      </>
-    )
+    <>
+      <BackgroundVideo />
+      {home?.content && <StoryblokComponent blok={home.content} />}
+    </>
   );
 };
 

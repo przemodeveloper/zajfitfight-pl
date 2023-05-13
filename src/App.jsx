@@ -8,6 +8,10 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Pricing from './pages/Pricing';
 import Schedule from './pages/Schedule';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import HomeSection from './components/HomeSection/HomeSection';
 
 const router = createBrowserRouter([
   {
@@ -46,11 +50,16 @@ storyblokInit({
   accessToken: 'eEd2NYvdyNmSY3A9WcOmkgtt',
   use: [apiPlugin],
   components: {
-    page: Page
+    page: Page,
+    homeSection: HomeSection
   }
 });
 
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return <RouterProvider router={router} />;
 };
 
