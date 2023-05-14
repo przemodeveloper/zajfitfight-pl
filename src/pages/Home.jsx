@@ -4,7 +4,7 @@ import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 
 const Home = () => {
   const storyblokApi = getStoryblokApi();
-  const [story, setStory] = useState();
+  const [story, setStory] = useState({});
   const home = useStoryblokState(story);
 
   const fetchHomeStory = async () => {

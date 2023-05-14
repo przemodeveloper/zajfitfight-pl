@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const Schedule = () => {
   const storyblokApi = getStoryblokApi();
-  const [story, setStory] = useState();
+  const [story, setStory] = useState({});
   const schedule = useStoryblokState(story);
 
   const fetchScheduleStory = async () => {

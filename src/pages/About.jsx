@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const About = () => {
   const storyblokApi = getStoryblokApi();
-  const [story, setStory] = useState();
+  const [story, setStory] = useState({});
   const about = useStoryblokState(story);
 
   const fetchAboutStory = async () => {

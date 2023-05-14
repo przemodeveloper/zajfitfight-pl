@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const Gallery = () => {
   const storyblokApi = getStoryblokApi();
-  const [story, setStory] = useState();
+  const [story, setStory] = useState({});
   const gallery = useStoryblokState(story);
 
   const fetchGalleryStory = async () => {
