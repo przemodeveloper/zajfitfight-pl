@@ -3,7 +3,9 @@ import Table from './Table';
 
 const ScheduleSection = ({ blok }) => (
   <div {...storyblokEditable(blok)}>
-    <Table content={blok.schedule} />
+    <div className="mt-16">
+      <Table content={blok.schedule} />
+    </div>
   </div>
 );
 
