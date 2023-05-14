@@ -1,10 +1,11 @@
 import { storyblokEditable } from '@storyblok/react';
 import styles from './HomeSection.module.scss';
+import MainTitle from './MainTitle';
 
 const HomeSection = ({ blok }) => (
-  <div {...storyblokEditable(blok)} className={styles.title}>
+  <div {...storyblokEditable(blok)} className={styles['title-block']}>
     <div data-aos="fade-right">
-      <h1 className="text-8xl md:text-9xl text-white">{blok.title}</h1>
+      <MainTitle title={blok.title} />
     </div>
   </div>
 );

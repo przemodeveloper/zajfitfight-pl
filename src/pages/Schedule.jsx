@@ -8,7 +8,7 @@ const Schedule = () => {
 
   const fetchScheduleStory = async () => {
     try {
-      const { data } = await storyblokApi.get('cdn/stories/cennik', {
+      const { data } = await storyblokApi.get('cdn/stories/grafik', {
         version: 'draft'
       });
       setStory(data?.story);
@@ -21,7 +21,13 @@ const Schedule = () => {
     fetchScheduleStory();
   }, []);
 
-  return schedule?.content && <StoryblokComponent blok={schedule.content} />;
+  return (
+    schedule?.content && (
+      <div className="container mx-auto">
+        <StoryblokComponent blok={schedule.content} />
+      </div>
+    )
+  );
 };
 
 export default Schedule;
