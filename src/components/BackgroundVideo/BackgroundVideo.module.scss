@@ -1,19 +1,9 @@
 .video {
-  top: 60px;
-  position: absolute;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -1;
-  width: 100%;
-  height: calc(100vh - 60px);
   object-fit: cover;
-  filter: brightness(50%);
-
-  @media (min-width: 768px) {
-    top: 80px;
-    height: calc(100vh - 80px);
-  }
-
-  @media (min-width: 1024px) {
-    top: 100px;
-    height: calc(100vh - 100px);
-  }
 }

@@ -5,8 +5,9 @@
 @import 'variables';
 @import url('https://fonts.googleapis.com/css2?family=Archivo&family=Teko&display=swap');
 
-* {
-  box-sizing: border-box;
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -16,4 +17,8 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url('./assets/logo_words.png') no-repeat center center fixed;
   background-size: contain;
+}
+
+* {
+  box-sizing: border-box;
 }
