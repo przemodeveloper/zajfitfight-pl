@@ -21,7 +21,13 @@ const Pricing = () => {
     fetchPricingStory();
   }, []);
 
-  return pricing?.content && <StoryblokComponent blok={pricing.content} />;
+  return (
+    pricing?.content && (
+      <div className="container mx-auto">
+        <StoryblokComponent blok={pricing.content} />
+      </div>
+    )
+  );
 };
 
 export default Pricing;

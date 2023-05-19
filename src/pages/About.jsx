@@ -21,7 +21,13 @@ const About = () => {
     fetchAboutStory();
   }, []);
 
-  return about?.content && <StoryblokComponent blok={about.content} />;
+  return (
+    about?.content && (
+      <div className="container mx-auto">
+        <StoryblokComponent blok={about.content} />
+      </div>
+    )
+  );
 };
 
 export default About;

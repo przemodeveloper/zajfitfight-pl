@@ -21,7 +21,13 @@ const Contact = () => {
     fetchContactStory();
   }, []);
 
-  return contact?.content && <StoryblokComponent blok={contact.content} />;
+  return (
+    contact?.content && (
+      <div className="container mx-auto">
+        <StoryblokComponent blok={contact.content} />
+      </div>
+    )
+  );
 };
 
 export default Contact;

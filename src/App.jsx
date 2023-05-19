@@ -13,6 +13,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import HomeSection from './components/HomeSection/HomeSection';
 import ScheduleSection from './components/ScheduleSection/ScheduleSection';
+import Header from './components/Header/Header';
 
 const router = createBrowserRouter([
   {
@@ -52,8 +53,9 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     page: Page,
-    homeSection: HomeSection,
-    scheduleSection: ScheduleSection
+    home: HomeSection,
+    header: Header,
+    schedule: ScheduleSection
   }
 });
 

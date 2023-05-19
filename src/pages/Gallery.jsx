@@ -21,7 +21,13 @@ const Gallery = () => {
     fetchGalleryStory();
   }, []);
 
-  return gallery?.content && <StoryblokComponent blok={gallery.content} />;
+  return (
+    gallery?.content && (
+      <div className="container mx-auto">
+        <StoryblokComponent blok={gallery.content} />
+      </div>
+    )
+  );
 };
 
 export default Gallery;
