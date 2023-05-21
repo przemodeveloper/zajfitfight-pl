@@ -11,7 +11,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center bg-secondary border-primary border-b-4">
+    <nav
+      className={`flex justify-between items-center bg-secondary border-primary border-b-4 ${styles.navbar}`}>
       <Logo />
       <div className={`${styles.hamburger} mr-2`}>
         <Hamburger toggled={showNavbar} toggle={handleShowNavbar} color="#cf142b" size={32} />
