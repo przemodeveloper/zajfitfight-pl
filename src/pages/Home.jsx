@@ -1,6 +1,6 @@
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
-import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
+// import BackgroundVideo from '../components/BackgroundVideo/BackgroundVideo';
 
 const Home = () => {
   const storyblokApi = getStoryblokApi();
@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <BackgroundVideo />
+      {/* <BackgroundVideo /> */}
       {home?.content && <StoryblokComponent blok={home.content} />}
     </>
   );
