@@ -1,5 +1,6 @@
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
+import ContactSection from '../components/ContactSection/ContactSection';
 
 const Contact = () => {
   const storyblokApi = getStoryblokApi();
@@ -25,6 +26,7 @@ const Contact = () => {
     contact?.content && (
       <div className="container mx-auto">
         <StoryblokComponent blok={contact.content} />
+        <ContactSection />
       </div>
     )
   );

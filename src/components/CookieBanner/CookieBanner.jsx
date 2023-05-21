@@ -12,13 +12,13 @@ const CookieBanner = ({ onAcceptCookies, onDeclineCookies }) => {
           <button
             type="button"
             onClick={onAcceptCookies}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2">
+            className="bg-secondary hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 border-primary border-4">
             Zgoda
           </button>
           <button
             type="button"
             onClick={onDeclineCookies}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+            className="bg-secondary hover:bg-blue-700 text-white font-bold py-2 px-4 border-primary border-4">
             Odmowa
           </button>
         </div>

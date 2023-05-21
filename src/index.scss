@@ -12,14 +12,16 @@ html {
 
 body {
   font-family: $font-family-base;
-  min-height: 400px;
-  margin-bottom: 100px;
-  clear: both;
   padding: 0;
   margin: 0;
+  margin-bottom: 96px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url('./assets/logo_words.png') no-repeat center center fixed;
   background-size: contain;
+
+  @media (min-width: 454px) {
+    margin-bottom: 68px;
+  }
 }
 
 * {
