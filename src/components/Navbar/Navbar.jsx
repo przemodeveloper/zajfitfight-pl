@@ -21,7 +21,7 @@ const Navbar = () => {
       <div
         className={`${styles.elements}  ${
           showNavbar && styles.active
-        } text-3xl text-white bg-secondary border-l-4 md:border-l-0 border-primary`}>
+        } text-3xl text-white bg-secondary border-l-4 border-b-4 md:border-b-0 md:border-l-0 border-primary`}>
         <ul className="flex justify-between md:items-center px-12 py-4 md:h-full gap-x-4 lg:gap-x-8">
           <li onClick={() => setShowNavbar(false)}>
             <NavLink
