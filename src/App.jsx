@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import HomeSection from './components/HomeSection/HomeSection';
 import ScheduleSection from './components/ScheduleSection/ScheduleSection';
 import Header from './components/Header/Header';
+import AboutSection from './components/AboutSection/AboutSection';
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,8 @@ storyblokInit({
     page: Page,
     home: HomeSection,
     header: Header,
-    schedule: ScheduleSection
+    schedule: ScheduleSection,
+    about: AboutSection
   }
 });
 
