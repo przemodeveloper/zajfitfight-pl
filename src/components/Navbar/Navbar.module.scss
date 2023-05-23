@@ -1,9 +1,41 @@
+.elements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
 .hamburger {
   display: none;
 }
 
 @media (max-width: 768px) {
   .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .elements {
+    position: absolute;
+    right: 0;
+    top: 64px;
+    width: 0px;
+    height: calc(100vh - 124px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .elements.active {
+    width: 270px;
+  }
+
+  .elements ul {
     display: flex;
+    flex-direction: column;
+  }
+
+  .elements ul li {
+    margin-right: unset;
+    margin-top: 22px;
+    white-space: nowrap;
   }
 }
