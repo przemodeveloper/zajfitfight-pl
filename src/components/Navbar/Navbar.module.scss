@@ -43,3 +43,9 @@
     white-space: nowrap;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .elements {
+    top: 84px;
+  }
+}
