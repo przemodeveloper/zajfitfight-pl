@@ -21,6 +21,8 @@ const About = () => {
     fetchAboutStory();
   }, []);
 
+  console.log(about.content);
+
   return (
     about?.content && (
       <div className="container mx-auto">

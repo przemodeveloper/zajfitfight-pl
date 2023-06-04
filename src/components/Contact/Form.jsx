@@ -1,6 +1,6 @@
-import styles from './ContactForm.module.scss';
+import styles from './Form.module.scss';
 
-const ContactForm = ({ onTextFieldChange, onSubmit, values }) => {
+const Form = ({ onTextFieldChange, onSubmit, values }) => {
   return (
     <form onSubmit={onSubmit}>
       <div className="flex flex-col sm:flex-row mb-4">
@@ -49,4 +49,4 @@ const ContactForm = ({ onTextFieldChange, onSubmit, values }) => {
   );
 };
 
-export default ContactForm;
+export default Form;

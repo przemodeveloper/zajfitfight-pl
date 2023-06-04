@@ -3,7 +3,6 @@ import { Twirl as Hamburger } from 'hamburger-react';
 import styles from './Navbar.module.scss';
 import Logo from '../Logo/Logo';
 import { NavLink } from 'react-router-dom';
-import MainTitle from '../HomeSection/MainTitle';
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -17,7 +16,6 @@ const Navbar = () => {
       className={`flex justify-between items-center bg-secondary border-primary border-b-4 ${styles.navbar}`}>
       <div className="flex items-center gap-x-7">
         <Logo />
-        <MainTitle title="Zajfit&Fight" />
       </div>
 
       <div className={`${styles.hamburger} mr-2`}>

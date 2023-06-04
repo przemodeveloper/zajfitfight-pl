@@ -1,7 +1,7 @@
 import { object, string } from 'yup';
 import { useState } from 'react';
 import update from 'immutability-helper';
-import ContactForm from './ContactForm';
+import Form from './Form';
 
 const formSchema = object().shape({
   name: string().required(),
@@ -9,7 +9,7 @@ const formSchema = object().shape({
   message: string().required()
 });
 
-const ContactSection = () => {
+const ContactForm = () => {
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -69,15 +69,10 @@ const ContactSection = () => {
   return (
     <div id="contact" data-aos="fade-right" data-aos-once="true" className="mt-8">
       <div className="mx-2 sm:mx-0">
-        <ContactForm
-          values={values}
-          errors={errors}
-          onTextFieldChange={fieldChange}
-          onSubmit={onSubmit}
-        />
+        <Form values={values} errors={errors} onTextFieldChange={fieldChange} onSubmit={onSubmit} />
       </div>
     </div>
   );
 };
 
-export default ContactSection;
+export default ContactForm;

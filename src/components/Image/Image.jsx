@@ -10,6 +10,7 @@ const Image = ({ src, alt, loading, className }) => {
       width={width}
       height={height}
       className={className}
+      style={{ maxWidth: '100%', height: 'auto' }}
       loading={loading}
     />
   );

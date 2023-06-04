@@ -11,10 +11,9 @@ import Schedule from './pages/Schedule';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import HomeSection from './components/HomeSection/HomeSection';
-import ScheduleSection from './components/ScheduleSection/ScheduleSection';
 import Header from './components/Header/Header';
-import AboutSection from './components/AboutSection/AboutSection';
+import Presentation from './components/Presentation/Presentation';
+import Table from './components/Schedule/Schedule';
 
 const router = createBrowserRouter([
   {
@@ -54,10 +53,9 @@ storyblokInit({
   use: [apiPlugin],
   components: {
     page: Page,
-    home: HomeSection,
     header: Header,
-    schedule: ScheduleSection,
-    about: AboutSection
+    schedule: Table,
+    presentation: Presentation
   }
 });
 

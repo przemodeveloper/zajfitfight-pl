@@ -1,11 +1,12 @@
-import styles from './Table.module.scss';
+import styles from './Schedule.module.scss';
+import { storyblokEditable } from '@storyblok/react';
 
-const Table = ({ content }) => (
-  <div className="overflow-x-auto">
+const Table = ({ blok }) => (
+  <div className="overflow-x-auto" {...storyblokEditable(blok)}>
     <table className={styles.table}>
       <thead>
         <tr>
-          {content.thead.map((th) => {
+          {blok.schedule.thead.map((th) => {
             return (
               <th key={th._uid} className="text-2xl">
                 {th.value}
@@ -15,7 +16,7 @@ const Table = ({ content }) => (
         </tr>
       </thead>
       <tbody className="text-xl">
-        {content.tbody.map((tr) => {
+        {blok.schedule.tbody.map((tr) => {
           return (
             <tr key={tr._uid}>
               {tr.body.map((td) => {
