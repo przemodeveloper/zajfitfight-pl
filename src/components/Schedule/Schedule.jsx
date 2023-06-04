@@ -2,7 +2,7 @@ import styles from './Schedule.module.scss';
 import { storyblokEditable } from '@storyblok/react';
 
 const Table = ({ blok }) => (
-  <div className="overflow-x-auto" {...storyblokEditable(blok)}>
+  <div className="overflow-x-auto mt-8" {...storyblokEditable(blok)}>
     <table className={styles.table}>
       <thead>
         <tr>
