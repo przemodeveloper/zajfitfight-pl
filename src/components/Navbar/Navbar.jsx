@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 import styles from './Navbar.module.scss';
 import Logo from '../Logo/Logo';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logoWords from '../../assets/logo_words.png';
 
 const Navbar = () => {
@@ -17,7 +17,9 @@ const Navbar = () => {
       className={`flex justify-between items-center bg-secondary border-primary border-b-4 ${styles.navbar}`}>
       <div className="flex items-center">
         <div className="flex items-center gap-x-7">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <div className="ml-4 sm:ml-12 md:ml-4">
           <img src={logoWords} alt="logo_words" className="w-48" />
