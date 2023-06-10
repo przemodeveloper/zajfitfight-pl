@@ -14,6 +14,8 @@ import { useEffect } from 'react';
 import Header from './components/Header/Header';
 import Presentation from './components/Presentation/Presentation';
 import Table from './components/Schedule/Schedule';
+import PriceItem from './components/PriceItem/PriceItem';
+import AdditionalInformation from './components/AdditionalInformation/AdditionalInformation';
 
 const router = createBrowserRouter([
   {
@@ -55,7 +57,9 @@ storyblokInit({
     page: Page,
     header: Header,
     schedule: Table,
-    presentation: Presentation
+    presentation: Presentation,
+    priceItem: PriceItem,
+    additionalInformation: AdditionalInformation
   }
 });
 
