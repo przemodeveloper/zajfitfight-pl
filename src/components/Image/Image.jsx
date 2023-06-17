@@ -1,11 +1,12 @@
 import { getImageDimensions } from '../../utils/get-image-dimensions';
+import { optimizeImage } from '../../utils/optimize-image';
 
 const Image = ({ src, alt, loading, className }) => {
   const { width, height } = getImageDimensions(src);
 
   return (
     <img
-      src={src}
+      src={optimizeImage(src)}
       alt={alt}
       width={width}
       height={height}
