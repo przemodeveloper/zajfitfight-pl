@@ -1,3 +1,3 @@
 export const optimizeImage = (url) => {
-  return `${url}/m/`;
+  return `${url}/m/filters:quality(70)/`;
 };
