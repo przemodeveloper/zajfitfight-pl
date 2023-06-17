@@ -1,6 +1,6 @@
 import { storyblokEditable } from '@storyblok/react';
 import styles from './ImagesGallery.module.scss';
-import Image from '../Image/Image';
+import CustomImage from '../CustomImage/CustomImage';
 import { useState } from 'react';
 import { UilArrowCircleLeft, UilArrowCircleRight, UilTimesCircle } from '@iconscout/react-unicons';
 
@@ -46,7 +46,7 @@ const ImagesGallery = ({ blok }) => {
           <UilArrowCircleRight className={styles.next} onClick={handlePrevSlide} />
 
           <div className={styles['full-screen-image']}>
-            <Image
+            <CustomImage
               src={blok.photos[slideNumber].filename}
               alt={blok.photos[slideNumber].alt}
               className={styles.image}
@@ -60,7 +60,7 @@ const ImagesGallery = ({ blok }) => {
           blok.photos.map((photo, index) => {
             return (
               <div className={styles.photo} key={index} onClick={() => handleOpenModal(index)}>
-                <Image src={photo.filename} alt={photo.alt} loading="eager" />
+                <CustomImage src={photo.filename} alt={photo.alt} loading="eager" />
               </div>
             );
           })}

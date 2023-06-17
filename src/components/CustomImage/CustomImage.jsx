@@ -1,7 +1,7 @@
 import { getImageDimensions } from '../../utils/get-image-dimensions';
 import { optimizeImage } from '../../utils/optimize-image';
 
-const Image = ({ src, alt, loading, className }) => {
+const CustomImage = ({ src, alt, loading, className }) => {
   const { width, height } = getImageDimensions(src);
 
   return (
@@ -17,4 +17,4 @@ const Image = ({ src, alt, loading, className }) => {
   );
 };
 
-export default Image;
+export default CustomImage;
