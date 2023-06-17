@@ -27,7 +27,13 @@ const Navbar = () => {
       </div>
 
       <div className={`${styles.hamburger} mr-2`}>
-        <Hamburger toggled={showNavbar} toggle={handleShowNavbar} color="#cf142b" size={32} />
+        <Hamburger
+          toggled={showNavbar}
+          toggle={handleShowNavbar}
+          color="#cf142b"
+          size={32}
+          label="Show menu"
+        />
       </div>
       <div
         className={`${styles.elements}  ${
