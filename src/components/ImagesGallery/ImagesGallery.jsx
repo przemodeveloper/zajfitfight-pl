@@ -41,14 +41,16 @@ const ImagesGallery = ({ blok }) => {
     <div {...storyblokEditable(blok)} className="mt-10 md:mt-16" data-aos="fade-right">
       {openModal && (
         <div className={styles['slider-wrap']}>
-          <div className="flex mb-4">
-            <UilTimesCircle className={styles.close} onClick={handleCloseModal} />
-            <UilArrowCircleLeft className={styles.prev} onClick={handleNextSlide} />
-            <UilArrowCircleRight className={styles.next} onClick={handlePrevSlide} />
-          </div>
+          <UilTimesCircle className={styles.close} onClick={handleCloseModal} />
+          <UilArrowCircleLeft className={styles.prev} onClick={handleNextSlide} />
+          <UilArrowCircleRight className={styles.next} onClick={handlePrevSlide} />
 
           <div className={styles['full-screen-image']}>
-            <Image src={blok.photos[slideNumber].filename} alt={blok.photos[slideNumber].alt} />
+            <Image
+              src={blok.photos[slideNumber].filename}
+              alt={blok.photos[slideNumber].alt}
+              className={styles.image}
+            />
           </div>
         </div>
       )}
