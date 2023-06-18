@@ -17,6 +17,7 @@ import Table from './components/Schedule/Schedule';
 import PriceItem from './components/PriceItem/PriceItem';
 import AdditionalInformation from './components/AdditionalInformation/AdditionalInformation';
 import ImagesGallery from './components/ImagesGallery/ImagesGallery';
+import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
         element: <Schedule />
       }
     ]
+  },
+  {
+    path: '*',
+    element: <NotFound />
   }
 ]);
 
