@@ -41,7 +41,7 @@ const RootLayout = () => {
           onDeclineCookies={handleDeclineCookies}
         />
       )}
-      <div className="mt-12 md:mt-24">
+      <div className="mt-24">
         <Footer />
       </div>
     </>
