@@ -1,6 +1,15 @@
 import styles from './Form.module.scss';
 
-const Form = ({ onTextFieldChange, onSubmit, values, formRef, errors, submitError, success }) => {
+const Form = ({
+  onTextFieldChange,
+  onSubmit,
+  values,
+  formRef,
+  errors,
+  submitError,
+  success,
+  sendingInProgress
+}) => {
   return (
     <form onSubmit={onSubmit} ref={formRef}>
       <div className="flex flex-col sm:flex-row mb-4">
@@ -44,18 +53,19 @@ const Form = ({ onTextFieldChange, onSubmit, values, formRef, errors, submitErro
         {errors.message && <p>{errors.message}</p>}
       </fieldset>
 
-      {submitError && !success && (
+      {submitError && !success && !Object.values(errors).length && (
         <p className="text-white mb-4">Coś poszło nie tak, spróbuj ponownie później.</p>
       )}
 
-      {!submitError && success && (
+      {!submitError && success && !Object.values(errors).length && (
         <p className="text-white mb-4">Wiadomość została wysłana, niedługo się odezwiemy!</p>
       )}
 
       <div className="flex justify-end">
         <button
+          disabled={sendingInProgress}
           type="submit"
-          className="bg-secondary hover:bg-blue-700 text-white font-bold py-2 px-4 border-primary border-4">
+          className="bg-secondary hover:bg-blue-700 text-white font-bold py-2 px-4 border-primary border-4 disabled:opacity-75">
           Wyślij
         </button>
       </div>

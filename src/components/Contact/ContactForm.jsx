@@ -18,6 +18,7 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
+  const [sendingInProgress, setSendingInProgress] = useState(false);
   const [success, setSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
   const [errors, setErrors] = useState({});
@@ -38,6 +39,7 @@ const ContactForm = () => {
     const isFormValid = await formSchema.isValid(values, { abortEarly: false });
 
     if (isFormValid) {
+      setSendingInProgress(true);
       emailjs
         .sendForm(
           process.env.REACT_APP_SERVICE_ID,
@@ -49,10 +51,12 @@ const ContactForm = () => {
           () => {
             setSuccess(true);
             setSubmitError(false);
+            setSendingInProgress(false);
           },
           () => {
             setSuccess(false);
             setSubmitError(true);
+            setSendingInProgress(false);
           }
         );
 
@@ -99,6 +103,7 @@ const ContactForm = () => {
           formRef={formRef}
           success={success}
           submitError={submitError}
+          sendingInProgress={sendingInProgress}
         />
       </div>
     </div>
