@@ -1,6 +1,6 @@
 import styles from './Form.module.scss';
 
-const Form = ({ onTextFieldChange, onSubmit, values, formRef }) => {
+const Form = ({ onTextFieldChange, onSubmit, values, formRef, errors, submitError, success }) => {
   return (
     <form onSubmit={onSubmit} ref={formRef}>
       <div className="flex flex-col sm:flex-row mb-4">
@@ -14,6 +14,7 @@ const Form = ({ onTextFieldChange, onSubmit, values, formRef }) => {
             value={values.name}
             onChange={(e) => onTextFieldChange('name', e.target.value)}
           />
+          {errors.name && <p>{errors.name}</p>}
         </fieldset>
 
         <fieldset className="w-full text-white">
@@ -26,6 +27,7 @@ const Form = ({ onTextFieldChange, onSubmit, values, formRef }) => {
             value={values.email}
             onChange={(e) => onTextFieldChange('email', e.target.value)}
           />
+          {errors.email && <p>{errors.email}</p>}
         </fieldset>
       </div>
 
@@ -39,7 +41,16 @@ const Form = ({ onTextFieldChange, onSubmit, values, formRef }) => {
           placeholder="Wiadomość..."
           value={values.message}
           onChange={(e) => onTextFieldChange('message', e.target.value)}></textarea>
+        {errors.message && <p>{errors.message}</p>}
       </fieldset>
+
+      {submitError && !success && (
+        <p className="text-white mb-4">Coś poszło nie tak, spróbuj ponownie później.</p>
+      )}
+
+      {!submitError && success && (
+        <p className="text-white mb-4">Wiadomość została wysłana, niedługo się odezwiemy!</p>
+      )}
 
       <div className="flex justify-end">
         <button

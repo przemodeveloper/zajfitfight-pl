@@ -5,9 +5,9 @@ import Form from './Form';
 import emailjs from '@emailjs/browser';
 
 const formSchema = object().shape({
-  name: string().required(),
-  email: string().email().required(),
-  message: string().required()
+  name: string().required('Imię jest wymagane'),
+  email: string().email().required('Email jest wymagany'),
+  message: string().required('Wiadomość jest wymagana')
 });
 
 const ContactForm = () => {
@@ -18,7 +18,8 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
-
+  const [success, setSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [errors, setErrors] = useState({});
 
   const fieldChange = (name, value) => {
@@ -45,11 +46,13 @@ const ContactForm = () => {
           process.env.REACT_APP_PUBLIC_KEY
         )
         .then(
-          (result) => {
-            console.log(result.text);
+          () => {
+            setSuccess(true);
+            setSubmitError(false);
           },
-          (error) => {
-            console.log(error.text);
+          () => {
+            setSuccess(false);
+            setSubmitError(true);
           }
         );
 
@@ -94,6 +97,8 @@ const ContactForm = () => {
           onTextFieldChange={fieldChange}
           onSubmit={onSubmit}
           formRef={formRef}
+          success={success}
+          submitError={submitError}
         />
       </div>
     </div>
