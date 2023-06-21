@@ -1,6 +1,7 @@
 import { useStoryblokState, getStoryblokApi, StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
 import ContactForm from '../components/Contact/ContactForm';
+import ContactBlock from '../components/ContactBlock/ContactBlock';
 
 const Contact = () => {
   const storyblokApi = getStoryblokApi();
@@ -26,7 +27,10 @@ const Contact = () => {
     contact?.content && (
       <div className="container mx-auto">
         <StoryblokComponent blok={contact.content} />
-        <ContactForm />
+        <div className="mb-4 md:mb-8">
+          <ContactForm />
+        </div>
+        <ContactBlock email="zajfitfight@gmail.com" phone="+123456789" />
       </div>
     )
   );

@@ -15,9 +15,9 @@ import Header from './components/Header/Header';
 import Presentation from './components/Presentation/Presentation';
 import Table from './components/Schedule/Schedule';
 import PriceItem from './components/PriceItem/PriceItem';
-import AdditionalInformation from './components/AdditionalInformation/AdditionalInformation';
 import ImagesGallery from './components/ImagesGallery/ImagesGallery';
 import NotFound from './pages/NotFound';
+import Information from './components/Information/Information';
 
 const router = createBrowserRouter([
   {
@@ -65,7 +65,7 @@ storyblokInit({
     schedule: Table,
     presentation: Presentation,
     priceItem: PriceItem,
-    additionalInformation: AdditionalInformation,
+    information: Information,
     gallery: ImagesGallery
   }
 });
