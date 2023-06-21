@@ -41,7 +41,12 @@ const ContactForm = () => {
     if (isFormValid) {
       setSendingInProgress(true);
       emailjs
-        .sendForm('service_3bqf0b6', 'template_fifw77d', formRef.current, '-GHQOh3-B9Dhv3nXU')
+        .sendForm(
+          process.env.REACT_APP_SERVICE_ID,
+          process.env.REACT_APP_TEMPLATE_ID,
+          formRef.current,
+          process.env.REACT_APP_PUBLIC_KEY
+        )
         .then(
           () => {
             setSuccess(true);
