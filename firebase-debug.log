@@ -1,0 +1,124 @@
+[debug] [2023-06-21T21:35:00.343Z] ----------------------------------------------------------------------
+[debug] [2023-06-21T21:35:00.344Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-06-21T21:35:00.345Z] CLI Version:   11.26.0
+[debug] [2023-06-21T21:35:00.345Z] Platform:      linux
+[debug] [2023-06-21T21:35:00.345Z] Node Version:  v16.17.1
+[debug] [2023-06-21T21:35:00.345Z] Time:          Wed Jun 21 2023 23:35:00 GMT+0200 (Central European Summer Time)
+[debug] [2023-06-21T21:35:00.345Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-21T21:35:00.398Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-21T21:35:00.399Z] > authorizing via signed-in user (przemyslaw.gorecki93@gmail.com)
+[debug] [2023-06-21T21:35:00.399Z] [iam] checking project zajfitfight-pl for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-21T21:35:00.400Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/zajfitfight-pl:testIamPermissions [none]
+[debug] [2023-06-21T21:35:00.401Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/zajfitfight-pl:testIamPermissions x-goog-quota-user=projects/zajfitfight-pl
+[debug] [2023-06-21T21:35:00.401Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zajfitfight-pl:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-21T21:35:01.461Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/zajfitfight-pl:testIamPermissions 200
+[debug] [2023-06-21T21:35:01.462Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zajfitfight-pl:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-21T21:35:01.463Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zajfitfight-pl [none]
+[debug] [2023-06-21T21:35:02.006Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zajfitfight-pl 200
+[debug] [2023-06-21T21:35:02.006Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zajfitfight-pl {"projectId":"zajfitfight-pl","projectNumber":"361803221899","displayName":"zajfitfight-pl","name":"projects/zajfitfight-pl","resources":{"hostingSite":"zajfitfight-pl"},"state":"ACTIVE","etag":"1_50a0e976-fa42-43b5-a14f-9c5ae914dc89"}
+[info] 
+[info] === Deploying to 'zajfitfight-pl'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-06-21T21:35:02.010Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions [none]
+[debug] [2023-06-21T21:35:02.010Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-06-21T21:35:03.375Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions 200
+[debug] [2023-06-21T21:35:03.375Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions {"name":"projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[zajfitfight-pl]: beginning deploy... 
+[info] i  hosting[zajfitfight-pl]: found 17 files in build 
+[debug] [2023-06-21T21:35:03.387Z] [hosting] uploading with 200 concurrency
+[debug] [2023-06-21T21:35:03.895Z] [hosting] hash cache [YnVpbGQ] stored for 17 files
+[debug] [2023-06-21T21:35:03.895Z] [hosting][hash queue][FINAL] {"max":498,"min":11,"avg":56.411764705882355,"active":0,"complete":17,"success":17,"errored":0,"retried":0,"total":17,"elapsed":504}
+[debug] [2023-06-21T21:35:03.895Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8:populateFiles [none]
+[debug] [2023-06-21T21:35:03.895Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8:populateFiles {"files":{"/asset-manifest.json":"514bb351d67306e9b5b7530931fcb437d2ca17bdc1def8040a7fd6838a5aef7f","/index.html":"709408adef5edf282be1c12ad3479b112229b7430252c61a96c05a0ff941f943","/logo192.png":"76c449ccb9cd117c2f2338f091b18f7050f3210e249b2228f5c81b23f34377cd","/manifest.json":"0958a5e0c831126100c8c2d06a6bbaa665a3900f21aaff4130238a6f5a113aa1","/robots.txt":"2544ca049f223a42bff01f72ad930a5edba75bbb7199d0f8430a02ff5aca16ec","/logo512.png":"7779210d56c1f3741e2e487799fe3092def4fa6ac450a60532b807c3a8971205","/static/js/787.7ced0f8b.chunk.js":"685b604a35fcf564347ea0ca13af207dc9837a20e438f08e46253f8003bf3a04","/static/js/787.7ced0f8b.chunk.js.map":"f30a5b9a08387a9b1b89c0a7c3da60259dce6bad55637203da3b4c40bba264e2","/static/js/main.ab367dc7.js.LICENSE.txt":"4c5cdb15dcd42015aa5c7e5edc15f786cdbae4eff5fef9b588c6cf912e3675fd","/static/css/main.54a3021c.css":"12e6b2d5383d2c782caedd800be128242e61c64d1a9b178b5501448fcc089ec6","/static/css/main.54a3021c.css.map":"4e7ea625f4f046424684fa05231fe80526c842b147dfcf59d82fbfd2ddcfab34","/static/media/logo_words.3e31000c62d9dee3611f.png":"9ccbb57d7287b7d59d2b5eff7e9b5b0ecd1ba30541a8c4482304b05bac02d8ff","/favicon.ico":"ba671eb34c624e59c64eadb54316461c9f869d7e38e67988895f58b79eea5bf1","/static/media/logo_small.92e89a057ee88fa7b68a.webp":"ba671eb34c624e59c64eadb54316461c9f869d7e38e67988895f58b79eea5bf1","/static/js/main.ab367dc7.js":"9ca68656bfd31a6ea91b7719a01ba8eac0e4f2c2d0a6d149fa057a8c636079d6","/static/js/main.ab367dc7.js.map":"fc6b98b5e1d0f31f30508a17ce53a8f30f6d6b386e4b293f89eb8bd96382384b","/static/media/video.d9d2e2d71d883da9deff.mp4":"eb0920a97cfdb8638164792d9f38a4a02819ee6019027015e6d79e65b03643f8"}}
+[debug] [2023-06-21T21:35:05.007Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8:populateFiles 200
+[debug] [2023-06-21T21:35:05.007Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8:populateFiles {"uploadRequiredHashes":["9ca68656bfd31a6ea91b7719a01ba8eac0e4f2c2d0a6d149fa057a8c636079d6","514bb351d67306e9b5b7530931fcb437d2ca17bdc1def8040a7fd6838a5aef7f","12e6b2d5383d2c782caedd800be128242e61c64d1a9b178b5501448fcc089ec6","4e7ea625f4f046424684fa05231fe80526c842b147dfcf59d82fbfd2ddcfab34","fc6b98b5e1d0f31f30508a17ce53a8f30f6d6b386e4b293f89eb8bd96382384b","709408adef5edf282be1c12ad3479b112229b7430252c61a96c05a0ff941f943"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files"}
+[debug] [2023-06-21T21:35:05.008Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/9ca68656bfd31a6ea91b7719a01ba8eac0e4f2c2d0a6d149fa057a8c636079d6 [none]
+[debug] [2023-06-21T21:35:05.008Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/9ca68656bfd31a6ea91b7719a01ba8eac0e4f2c2d0a6d149fa057a8c636079d6 [stream]
+[debug] [2023-06-21T21:35:05.009Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/514bb351d67306e9b5b7530931fcb437d2ca17bdc1def8040a7fd6838a5aef7f [none]
+[debug] [2023-06-21T21:35:05.009Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/514bb351d67306e9b5b7530931fcb437d2ca17bdc1def8040a7fd6838a5aef7f [stream]
+[debug] [2023-06-21T21:35:05.010Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/12e6b2d5383d2c782caedd800be128242e61c64d1a9b178b5501448fcc089ec6 [none]
+[debug] [2023-06-21T21:35:05.010Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/12e6b2d5383d2c782caedd800be128242e61c64d1a9b178b5501448fcc089ec6 [stream]
+[debug] [2023-06-21T21:35:05.011Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/4e7ea625f4f046424684fa05231fe80526c842b147dfcf59d82fbfd2ddcfab34 [none]
+[debug] [2023-06-21T21:35:05.011Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/4e7ea625f4f046424684fa05231fe80526c842b147dfcf59d82fbfd2ddcfab34 [stream]
+[debug] [2023-06-21T21:35:05.012Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/fc6b98b5e1d0f31f30508a17ce53a8f30f6d6b386e4b293f89eb8bd96382384b [none]
+[debug] [2023-06-21T21:35:05.012Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/fc6b98b5e1d0f31f30508a17ce53a8f30f6d6b386e4b293f89eb8bd96382384b [stream]
+[debug] [2023-06-21T21:35:05.013Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/709408adef5edf282be1c12ad3479b112229b7430252c61a96c05a0ff941f943 [none]
+[debug] [2023-06-21T21:35:05.013Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/709408adef5edf282be1c12ad3479b112229b7430252c61a96c05a0ff941f943 [stream]
+[debug] [2023-06-21T21:35:05.014Z] [hosting][populate queue][FINAL] {"max":1114,"min":1114,"avg":1114,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1120}
+[debug] [2023-06-21T21:35:05.014Z] [hosting] uploads queued: 6
+[debug] [2023-06-21T21:35:06.360Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/12e6b2d5383d2c782caedd800be128242e61c64d1a9b178b5501448fcc089ec6 200
+[debug] [2023-06-21T21:35:06.360Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/12e6b2d5383d2c782caedd800be128242e61c64d1a9b178b5501448fcc089ec6 [stream]
+[debug] [2023-06-21T21:35:07.057Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/4e7ea625f4f046424684fa05231fe80526c842b147dfcf59d82fbfd2ddcfab34 200
+[debug] [2023-06-21T21:35:07.057Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/4e7ea625f4f046424684fa05231fe80526c842b147dfcf59d82fbfd2ddcfab34 [stream]
+[debug] [2023-06-21T21:35:07.059Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/709408adef5edf282be1c12ad3479b112229b7430252c61a96c05a0ff941f943 200
+[debug] [2023-06-21T21:35:07.059Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/709408adef5edf282be1c12ad3479b112229b7430252c61a96c05a0ff941f943 [stream]
+[debug] [2023-06-21T21:35:07.160Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/514bb351d67306e9b5b7530931fcb437d2ca17bdc1def8040a7fd6838a5aef7f 200
+[debug] [2023-06-21T21:35:07.160Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/514bb351d67306e9b5b7530931fcb437d2ca17bdc1def8040a7fd6838a5aef7f [stream]
+[debug] [2023-06-21T21:35:07.551Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/9ca68656bfd31a6ea91b7719a01ba8eac0e4f2c2d0a6d149fa057a8c636079d6 200
+[debug] [2023-06-21T21:35:07.552Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/9ca68656bfd31a6ea91b7719a01ba8eac0e4f2c2d0a6d149fa057a8c636079d6 [stream]
+[debug] [2023-06-21T21:35:07.876Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/fc6b98b5e1d0f31f30508a17ce53a8f30f6d6b386e4b293f89eb8bd96382384b 200
+[debug] [2023-06-21T21:35:07.877Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8/files/fc6b98b5e1d0f31f30508a17ce53a8f30f6d6b386e4b293f89eb8bd96382384b [stream]
+[debug] [2023-06-21T21:35:07.877Z] [hosting][upload queue][FINAL] {"max":2869,"min":1352,"avg":2170,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":2870}
+[info] ✔  hosting[zajfitfight-pl]: file upload complete 
+[debug] [2023-06-21T21:35:07.880Z] [hosting] deploy completed after 4502ms
+[debug] [2023-06-21T21:35:07.886Z] [
+  {
+    "config": {
+      "site": "zajfitfight-pl",
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|webp)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=15552000"
+            }
+          ]
+        },
+        {
+          "source": "404.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=300"
+            }
+          ]
+        }
+      ]
+    },
+    "version": "projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8"
+  }
+]
+[info] i  hosting[zajfitfight-pl]: finalizing version... 
+[debug] [2023-06-21T21:35:07.893Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8 updateMask=status%2Cconfig
+[debug] [2023-06-21T21:35:07.894Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}],"headers":[{"glob":"**/*.@(eot|otf|ttf|ttc|woff|font.css)","headers":{"Access-Control-Allow-Origin":"*"}},{"glob":"**/*.@(jpg|jpeg|gif|png|webp)","headers":{"Cache-Control":"max-age=15552000"}},{"glob":"404.html","headers":{"Cache-Control":"max-age=300"}}]}}
+[debug] [2023-06-21T21:35:09.109Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8 200
+[debug] [2023-06-21T21:35:09.109Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8 {"name":"projects/361803221899/sites/zajfitfight-pl/versions/cf8b23e63b0dd9b8","status":"FINALIZED","config":{"headers":[{"headers":{"Access-Control-Allow-Origin":"*"},"glob":"**/*.@(eot|otf|ttf|ttc|woff|font.css)"},{"headers":{"Cache-Control":"max-age=15552000"},"glob":"**/*.@(jpg|jpeg|gif|png|webp)"},{"headers":{"Cache-Control":"max-age=300"},"glob":"404.html"}],"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-06-21T21:35:03.010058Z","createUser":{"email":"przemyslaw.gorecki93@gmail.com"},"finalizeTime":"2023-06-21T21:35:08.857660Z","finalizeUser":{"email":"przemyslaw.gorecki93@gmail.com"}}
+[debug] [2023-06-21T21:35:09.109Z] [hosting] finalized version for zajfitfight-pl:[object Object]
+[info] ✔  hosting[zajfitfight-pl]: version finalized 
+[info] i  hosting[zajfitfight-pl]: releasing new version... 
+[debug] [2023-06-21T21:35:09.110Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/channels/live/releases versionName=projects%2F361803221899%2Fsites%2Fzajfitfight-pl%2Fversions%2Fcf8b23e63b0dd9b8
+[debug] [2023-06-21T21:35:09.110Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zajfitfight-pl/channels/live/releases {}
