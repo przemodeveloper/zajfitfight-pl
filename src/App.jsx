@@ -57,7 +57,7 @@ const router = createBrowserRouter([
 ]);
 
 storyblokInit({
-  accessToken: 'eEd2NYvdyNmSY3A9WcOmkgtt',
+  accessToken: 'F74amgM5h0aQ1Qp19Fh3uwtt',
   use: [apiPlugin],
   components: {
     page: Page,

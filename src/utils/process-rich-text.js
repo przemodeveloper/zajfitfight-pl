@@ -1,7 +1,7 @@
 import StoryblokClient from 'storyblok-js-client';
 
 const Storyblok = new StoryblokClient({
-  accessToken: 'eEd2NYvdyNmSY3A9WcOmkgtt'
+  accessToken: 'F74amgM5h0aQ1Qp19Fh3uwtt'
 });
 
 export const processRichText = (storyblokHTML) => {
