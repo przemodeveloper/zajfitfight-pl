@@ -1,57 +1,38 @@
 import styles from './Form.module.scss';
 
 const Form = ({
-  onTextFieldChange,
   onSubmit,
-  values,
   formRef,
   errors,
   submitError,
   success,
-  sendingInProgress
+  sendingInProgress,
+  fields,
+  values,
+  onTextFieldChange
 }) => {
   return (
     <form onSubmit={onSubmit} ref={formRef}>
-      <div className="flex flex-col sm:flex-row mb-4">
-        <fieldset className="mr-4 w-full mb-4 sm:mb-0 text-white">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className={`text-2xl w-full bg-transparent ${styles.input}`}
-            placeholder="Imię"
-            value={values.name}
-            onChange={(e) => onTextFieldChange('name', e.target.value)}
-          />
-          {errors.name && <p>{errors.name}</p>}
-        </fieldset>
+      <div className="flex flex-col">
+        {fields.map((field) => {
+          return (
+            <fieldset key={field._uid} className="mr-4 w-full mb-4 text-white">
+              <field.tag
+                name={field.name}
+                placeholder={field.placeholder}
+                className={`text-2xl w-full bg-transparent ${styles.input}`}
+                type={field.type}
+                id={field.name}
+                value={values?.[field.name]}
+                onChange={(e) => onTextFieldChange(field.name, e.target.value)}
+                {...(field.tag === 'textarea' && { rows: 7 })}
+              />
 
-        <fieldset className="w-full text-white">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className={`text-2xl bg-transparent w-full ${styles.input}`}
-            placeholder="Email"
-            value={values.email}
-            onChange={(e) => onTextFieldChange('email', e.target.value)}
-          />
-          {errors.email && <p>{errors.email}</p>}
-        </fieldset>
+              {errors?.[field.name] && <p>{errors?.[field.name]}</p>}
+            </fieldset>
+          );
+        })}
       </div>
-
-      <fieldset className="text-white mb-4">
-        <textarea
-          type="text"
-          id="message"
-          name="message"
-          className={`w-full text-2xl bg-transparent  ${styles.input}`}
-          rows="7"
-          placeholder="Wiadomość..."
-          value={values.message}
-          onChange={(e) => onTextFieldChange('message', e.target.value)}></textarea>
-        {errors.message && <p>{errors.message}</p>}
-      </fieldset>
 
       {submitError && !success && !Object.values(errors).length && (
         <p className="text-white mb-4">Coś poszło nie tak, spróbuj ponownie później.</p>

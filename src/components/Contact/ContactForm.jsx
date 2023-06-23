@@ -97,6 +97,7 @@ const ContactForm = ({ blok }) => {
       {...storyblokEditable(blok)}>
       <div className="mx-2 sm:mx-0">
         <Form
+          fields={blok.fields}
           values={values}
           errors={errors}
           onTextFieldChange={fieldChange}
