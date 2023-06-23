@@ -13,26 +13,24 @@ const Form = ({
 }) => {
   return (
     <form onSubmit={onSubmit} ref={formRef}>
-      <div className="flex flex-col">
-        {fields.map((field) => {
-          return (
-            <fieldset key={field._uid} className="mr-4 w-full mb-4 text-white">
-              <field.tag
-                name={field.name}
-                placeholder={field.placeholder}
-                className="text-2xl w-full bg-transparent border-4 bortder-white"
-                type={field.type}
-                id={field.name}
-                value={values?.[field.name]}
-                onChange={(e) => onTextFieldChange(field.name, e.target.value)}
-                {...(field.tag === 'textarea' && { rows: 7 })}
-              />
+      {fields.map((field) => {
+        return (
+          <fieldset key={field._uid} className="mr-4 w-full mb-4 text-white">
+            <field.tag
+              name={field.name}
+              placeholder={field.placeholder}
+              className="text-2xl w-full bg-transparent border-4 bortder-white"
+              type={field.type}
+              id={field.name}
+              value={values?.[field.name]}
+              onChange={(e) => onTextFieldChange(field.name, e.target.value)}
+              {...(field.tag === 'textarea' && { rows: 7 })}
+            />
 
-              {errors?.[field.name] && <p>{errors?.[field.name]}</p>}
-            </fieldset>
-          );
-        })}
-      </div>
+            {errors?.[field.name] && <p>{errors?.[field.name]}</p>}
+          </fieldset>
+        );
+      })}
 
       {submitError && !success && !Object.values(errors).length && (
         <p className="text-white mb-4">Coś poszło nie tak, spróbuj ponownie później.</p>
