@@ -1,4 +1,4 @@
-import styles from './Form.module.scss';
+// import styles from './Form.module.scss';
 
 const Form = ({
   onSubmit,
@@ -20,7 +20,7 @@ const Form = ({
               <field.tag
                 name={field.name}
                 placeholder={field.placeholder}
-                className={`text-2xl w-full bg-transparent ${styles.input}`}
+                className="text-2xl w-full bg-transparent border-4 bortder-white"
                 type={field.type}
                 id={field.name}
                 value={values?.[field.name]}

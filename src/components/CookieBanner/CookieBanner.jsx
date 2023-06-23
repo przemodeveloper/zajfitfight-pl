@@ -1,8 +1,6 @@
-import styles from './CookieBanner.module.scss';
-
 const CookieBanner = ({ onAcceptCookies, onDeclineCookies }) => {
   return (
-    <div className={`text-white text-xl flex flex-col items-center ${styles.banner}`}>
+    <div className="text-white text-xl flex flex-col items-center fixed bottom-24 w-full">
       <div className="bg-secondary text-center p-4 border-primary border-l-0 border-r-0 border-t-4 border-b-4 md:border-l-4 md:border-r-4">
         <p className="mb-2">
           Ta strona używa plików cookie aby zapewnić najlepszą jakość korzystania z serwisu i pomóc
