@@ -18,6 +18,8 @@ import PriceItem from './components/PriceItem/PriceItem';
 import ImagesGallery from './components/ImagesGallery/ImagesGallery';
 import NotFound from './pages/NotFound';
 import Information from './components/Information/Information';
+import ContactForm from './components/Contact/ContactForm';
+import ContactBlock from './components/ContactBlock/ContactBlock';
 
 const router = createBrowserRouter([
   {
@@ -66,7 +68,9 @@ storyblokInit({
     presentation: Presentation,
     priceItem: PriceItem,
     information: Information,
-    gallery: ImagesGallery
+    gallery: ImagesGallery,
+    contactForm: ContactForm,
+    contactBlock: ContactBlock
   }
 });
 

@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import update from 'immutability-helper';
 import Form from './Form';
 import emailjs from '@emailjs/browser';
+import { storyblokEditable } from '@storyblok/react';
 
 const formSchema = object().shape({
   name: string().required('Imię jest wymagane'),
@@ -10,7 +11,7 @@ const formSchema = object().shape({
   message: string().required('Wiadomość jest wymagana')
 });
 
-const ContactForm = () => {
+const ContactForm = ({ blok }) => {
   const formRef = useRef(null);
 
   const [values, setValues] = useState({
@@ -88,7 +89,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div id="contact" data-aos="fade-right" data-aos-once="true" className="mt-8">
+    <div
+      id="contact"
+      data-aos="fade-right"
+      data-aos-once="true"
+      className="mt-8"
+      {...storyblokEditable(blok)}>
       <div className="mx-2 sm:mx-0">
         <Form
           values={values}
