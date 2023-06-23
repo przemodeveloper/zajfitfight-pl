@@ -8,7 +8,7 @@
   th {
     border: 1px solid #ddd;
     padding: 8px;
-    color: white;
+    color: $color-white;
     width: 16.67%;
   }
 
@@ -17,6 +17,6 @@
     padding-bottom: 12px;
     text-align: left;
     background-color: $color-primary;
-    color: white;
+    color: $color-white;
   }
 }
