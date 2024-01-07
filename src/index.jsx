@@ -15,7 +15,7 @@ root.render(
 );
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  apiKey: 'AIzaSyBTfe1gnv9TrE-9uLPg0aoyxj0oUl_pyhE',
   authDomain: 'zajfitfight-pl.firebaseapp.com',
   projectId: 'zajfitfight-pl',
   storageBucket: 'zajfitfight-pl.appspot.com',
