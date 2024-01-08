@@ -60,7 +60,12 @@ const ImagesGallery = ({ blok }) => {
           blok.photos.map((photo, index) => {
             return (
               <div className={styles.photo} key={index} onClick={() => handleOpenModal(index)}>
-                <CustomImage src={photo.filename} alt={photo.alt} loading="eager" />
+                <CustomImage
+                  src={photo.filename}
+                  alt={photo.alt}
+                  loading="eager"
+                  className="object-contain"
+                />
               </div>
             );
           })}
